@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snake_Ladder;
+using System;
 
 namespace SnakeLadder
 {
@@ -7,6 +8,8 @@ namespace SnakeLadder
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and ladder game");
+            Play start = new Play();
+            start.DieRoll();
         }
     }
 }
