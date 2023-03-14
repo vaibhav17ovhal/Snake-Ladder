@@ -8,7 +8,7 @@ namespace Snake_Ladder
 {
     public class Play
     {
-        const int NO_PLAY = 0 , LADDER = 1 , SNAKE = 2, WINNING_POSITION = 100;
+        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WINNING_POSITION = 100;
         //UC1
         int playerposition = 0;
 
@@ -41,7 +41,10 @@ namespace Snake_Ladder
                 }
                 Console.WriteLine("Player position ----->   " + playerposition);
             }
-            Console.WriteLine("Playe position ----->   " + playerposition);
-        }
+            if (this.playerposition == WINNING_POSITION)
+            {
+                Console.WriteLine("Player position ----->   " + playerposition);
+            }
+        } 
     }
 }
