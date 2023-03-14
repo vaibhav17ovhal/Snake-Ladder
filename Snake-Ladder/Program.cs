@@ -10,6 +10,7 @@ namespace SnakeLadder
             Console.WriteLine("Welcome to Snake and ladder game");
             Play start = new Play();
             start.DieRoll();
+            start.Game();
         }
     }
 }
