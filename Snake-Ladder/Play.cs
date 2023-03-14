@@ -8,7 +8,7 @@ namespace Snake_Ladder
 {
     public class Play
     {
-        const int NO_PLAY = 0 , LADDER = 1 , SNAKE = 2;
+        const int NO_PLAY = 0 , LADDER = 1 , SNAKE = 2, WINNING_POSITION = 100;
         //UC1
         int playerposition = 0;
 
@@ -21,18 +21,27 @@ namespace Snake_Ladder
         }
         public void Game()
         {
-            int option = random.Next(0, 3);
-            switch (option)
+            while (this.playerposition < WINNING_POSITION)
             {
-                case NO_PLAY:
-                    break; 
-                case LADDER:
-                    this.playerposition += DieRoll();
-                    break;
-                case SNAKE:
-                    this.playerposition -= DieRoll();
-                    break; 
+                int option = random.Next(0, 3);
+                switch (option)
+                {
+                    case NO_PLAY:
+                        break;
+                    case LADDER:
+                        this.playerposition += DieRoll();
+                        break;
+                    case SNAKE:
+                        int dieRoll = DieRoll();
+                        if (this.playerposition - dieRoll > 0)
+                            this.playerposition -= DieRoll();
+                        else
+                            this.playerposition = 0;
+                        break;
+                }
+                Console.WriteLine("Player position ----->   " + playerposition);
             }
+            Console.WriteLine("Playe position ----->   " + playerposition);
         }
     }
 }
